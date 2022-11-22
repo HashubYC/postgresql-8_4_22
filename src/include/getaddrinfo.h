@@ -96,14 +96,14 @@
 #ifndef WIN32
 struct addrinfo
 {
-	int			ai_flags;
-	int			ai_family;
-	int			ai_socktype;
-	int			ai_protocol;
-	size_t		ai_addrlen;
-	struct sockaddr *ai_addr;
-	char	   *ai_canonname;
-	struct addrinfo *ai_next;
+	int			ai_flags;		// AI_PASSIVE, AI_CANONNAME
+	int			ai_family;		// 地址族协议
+	int			ai_socktype;	// 套接字类型
+	int			ai_protocol;	// 0 或者 IPv4、IPv6 选项
+	size_t		ai_addrlen;		// 套接口地址结构长度
+	struct sockaddr *ai_addr;	// 套接口地址指针
+	char	   *ai_canonname;	// 主机规范名
+	struct addrinfo *ai_next;	// 指向下一个 struct addrinfo 的指针
 };
 #else
 /*

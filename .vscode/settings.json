@@ -4,6 +4,8 @@
     "*.cjson": "jsonc",
     "*.wxss": "css",
     "*.wxs": "javascript",
-    "parsenodes.h": "c"
-  }
+    "parsenodes.h": "c",
+    "types.h": "c"
+  },
+  "commentTranslate.source": "Google"
 }
