@@ -1388,15 +1388,18 @@ ServerLoop(void)
 						BackendStartup(port);
 
 						/*
+						 * 关闭 Postmaster
 						 * We no longer need the open socket or port structure
 						 * in this process
 						 */
 						StreamClose(port->sock);
-						ConnFree(port);
+						ConnFree(port); // 释放 Port结构体
 					}
 				}
 			}
 		}
+
+		// 检查并确保辅助进程如 BgWriter、SysLogger 等正常运行
 
 		/* If we have lost the log collector, try to start a new one */
 		if (SysLoggerPID == 0 && Logging_collector)
