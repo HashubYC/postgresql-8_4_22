@@ -103,10 +103,10 @@ typedef struct
 
 typedef struct Port
 {
-	int			sock;			/* File descriptor */
+	int			sock;			/* 已连接的套接字描述符 File descriptor */
 	ProtocolVersion proto;		/* FE/BE protocol version */
-	SockAddr	laddr;			/* local addr (postmaster) */
-	SockAddr	raddr;			/* remote addr (client) */
+	SockAddr	laddr;			/* 服务器端的地址信息 local addr (postmaster) */
+	SockAddr	raddr;			/* 客户端的地址信息 remote addr (client) */
 	char	   *remote_host;	/* name (or ip addr) of remote host */
 	char	   *remote_port;	/* text rep of remote port */
 	CAC_state	canAcceptConnections;	/* postmaster connection status */
@@ -116,8 +116,8 @@ typedef struct Port
 	 * into backend execution.  "char *" fields are NULL if not set.
 	 * guc_options points to a List of alternating option names and values.
 	 */
-	char	   *database_name;
-	char	   *user_name;
+	char	   *database_name; // 要连接的数据库名
+	char	   *user_name;  // 连接的用户名
 	char	   *cmdline_options;
 	List	   *guc_options;
 
