@@ -242,8 +242,8 @@ typedef struct PgStat_MsgTabpurge
  */
 typedef struct PgStat_MsgDropdb
 {
-	PgStat_MsgHdr m_hdr;
-	Oid			m_databaseid;
+	PgStat_MsgHdr m_hdr;		// 消息头部信息，记录消息的类型和长度
+	Oid			m_databaseid;	// 要删除的数据库的 OID
 } PgStat_MsgDropdb;
 
 
