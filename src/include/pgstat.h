@@ -151,8 +151,8 @@ typedef struct PgStat_TableXactStatus
  */
 typedef struct PgStat_MsgHdr
 {
-	StatMsgType m_type;
-	int			m_size;
+	StatMsgType m_type;	// 消息类型
+	int			m_size;	// 消息长度
 } PgStat_MsgHdr;
 
 /* ----------
